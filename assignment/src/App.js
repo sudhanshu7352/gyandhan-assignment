@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Search /> } />
-        <Route path='/search_results/:lati_longi' element={<Home /> } />
+        <Route path='/search_results/:lati/:longi' element={<Home /> } />
         <Route path='/past_results' element={<Past_results /> } />
       </Routes>
     </div>

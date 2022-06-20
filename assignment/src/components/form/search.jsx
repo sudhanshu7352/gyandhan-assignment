@@ -9,19 +9,17 @@ export const Search=()=>{
     // const [latitude,setLatitude] =useState("") 
      const handleSubmit=(e)=>{
         e.preventDefault()
-        navigate(`/search_results/${data}`)
-        console.log(data)
+        let long =data.longitude
+        let lati =data.latitude
+        navigate(`/search_results/${long}/${lati}`)
+        //console.log(data)
      }
 
     const handleChange=(e)=>{
         let {id,value} =e.target
         setData({...data,[id]:value})
-        // if(id =="latitude"){
-        //     setLatitude(value)
-        // }
-        // if(id =="longitude"){
-        //     setLongitude(value)
-        // }
+        
+        
      
     }
     return (
@@ -31,11 +29,11 @@ export const Search=()=>{
 
                 <label>
                  <p>Latitude</p>
-                 <input type="number" id="latitude" onChange={handleChange} required />
+                 <input type="float" id="latitude" onChange={handleChange} required />
                 </label>
                 <label>
                 <p>Longitude</p>
-                 <input type="number" id="longitude" onChange={handleChange} required />
+                 <input type="float" id="longitude" onChange={handleChange} required />
                 </label>
                 </div>
                 <br />

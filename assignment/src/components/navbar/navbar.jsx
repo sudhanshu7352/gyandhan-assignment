@@ -5,7 +5,7 @@ export const Navbar=()=>{
 
     return(
         <div className="nav_main">
-            <div onClick={()=>navigate("/search_results")}>Home</div>
+            <div onClick={()=>navigate("/search_results/:lati/:longi")}>Home</div>
             <div  onClick={()=>navigate("/past_results")}>Past Results</div>
         </div>
     )
