@@ -1,0 +1,31 @@
+.form_button{
+    background-color: rgb(130,1,250);
+    border: 0;
+    padding: 8px 15px;
+    font-family: sans-serif;
+    border-radius: 4px;
+    color: white;
+    margin-left: -5%;
+}
+.form_button:hover{
+    cursor: pointer;
+    background-color: rgb(155, 67, 236);
+}
+.small_div{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    margin-top: 10%;
+    gap: 20%;
+    /* border: 1px solid red; */
+}
+.small_div input{
+    border: 2px solid rgb(221, 218, 218); 
+    padding: 8px;
+}
+.small_div p{
+    margin-left: -60%;
+    margin-bottom: 3%;
+    font-weight: 500;
+    color: rgb(82, 80, 80);
+}

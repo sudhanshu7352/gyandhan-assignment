@@ -1,0 +1,16 @@
+
+.nav_main{
+    display: flex;
+    border-bottom: 2px solid gainsboro; 
+
+}
+.nav_main>div{
+    border-right:2px solid gainsboro ;
+    width: 18%;
+    padding: 5px 1px;
+    font-weight: 500;
+    color: rgb(82, 80, 80);
+}
+.nav_main>div:hover{
+    cursor: pointer;
+}
