@@ -6,7 +6,7 @@ import axios from "axios";
 export const Home = () => {
   const data = useParams();
   const navigate =useNavigate()
- console.log(data)
+//  console.log(data)
  
   const [weather,setWeather] =useState([])
   
@@ -31,7 +31,7 @@ export const Home = () => {
 //   if(val){
   return (
     <>
-    {data.lati !=-0?
+    {data.lati !=-99?
     (<div className="home_div">
 
       <h3 className="h3">Temperatures</h3>
@@ -45,7 +45,7 @@ export const Home = () => {
         <tbody id="tb">
           
            { weather.map((e,i)=>
-           <tr>
+           <tr key={i}>
                   <td> {e.time}  </td>
                   <td> {e.temperature_2m}  </td>
                        

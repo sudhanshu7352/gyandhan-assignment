@@ -14,7 +14,7 @@ export const Past_results=()=>{
         Date.splice(i,1)
         // console.log(Date)
         localStorage.setItem("Date",JSON.stringify(Date));
-        console.log(i)
+        // console.log(i)
           setData([...Date])
    }
 useEffect(()=>{
