@@ -1,12 +1,18 @@
 import "./navbar.css"
-import {  useNavigate } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 export const Navbar=()=>{
- const navigate =useNavigate()
-
+    const data = useParams();
+    const navigate =useNavigate()
+//    console.log(data)
+//    let flag
+//    data?flag=true:flag=false
+//     // if(flag==true){
+//           document.getElementById("home2").style.backgroundColor ="#9452d1"
+//     // }
     return(
         <div className="nav_main">
-            <div onClick={()=>navigate("/search_results/:lati/:longi")}>Home</div>
-            <div  onClick={()=>navigate("/past_results")}>Past Results</div>
+            <div id="home2" onClick={()=>navigate("/search_results/-0/-0")}>Home</div>
+            <div id="past"  onClick={()=>navigate("/past_results")}>Past Results</div>
         </div>
     )
 }

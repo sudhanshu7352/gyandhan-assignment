@@ -1,29 +1,28 @@
 import "./home.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const Home = () => {
   const data = useParams();
- 
- 
+  const navigate =useNavigate()
+ console.log(data)
  
   const [weather,setWeather] =useState([])
-  const [we,setWe]=useState()
+  
  
- let i=0
+//  let i=0
 
 
   useEffect(() => {
     axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${data.longi}&longitude=${data.lati}&hourly=temperature_2m`).then((res)=>{
-        // setVal(true)
-        console.log(res.data.hourly,"a")
-        const x=[]
+       
+         const x=[]
 
         for(let i=0;i<10;i++){
             x.push({time:res.data.hourly.time[i],temperature_2m:res.data.hourly.temperature_2m[i]})
         }
-        console.log(x)
+        // console.log(x)
         setWeather([...x])
     });
   }, []);
@@ -31,7 +30,9 @@ export const Home = () => {
 
 //   if(val){
   return (
-    <div className="home_div">
+    <>
+    {data.lati !=-0?
+    (<div className="home_div">
 
       <h3 className="h3">Temperatures</h3>
       <table>
@@ -54,7 +55,10 @@ export const Home = () => {
             </tbody>
         
       </table>
-    </div>
+    </div>)
+    : (navigate("/"))
+           }
+    </>
   )
         }
         

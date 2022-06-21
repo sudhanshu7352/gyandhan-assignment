@@ -1,6 +1,9 @@
 import "./past_results.css"
 
 export const Past_results=()=>{
+
+    const Date =JSON.parse(localStorage.getItem("Date"))
+    console.log(Date,"da")
     return (
         <div className="past_div">
         <table>
@@ -14,7 +17,15 @@ export const Past_results=()=>{
             </tr>
             </thead>
             <tbody>
-
+              {/* {Date.map(()=>(
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+              ))} */}
             </tbody>
         </table>
     </div>
