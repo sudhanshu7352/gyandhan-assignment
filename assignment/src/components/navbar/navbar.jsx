@@ -21,13 +21,13 @@ export const Navbar=()=>{
 const change =()=>{
     flag=true
     navigate("/past_results")
-    document.getElementById("past").style.backgroundColor ="#9452d1"
+    document.getElementById("past").style.backgroundColor ="#b08bd3"
       document.getElementById("home2").style.backgroundColor ="white"
 }
 const change2=()=>{
     flag=false
     navigate("/search_results/-99/-0")
-    document.getElementById("home2").style.backgroundColor ="#9452d1"
+    document.getElementById("home2").style.backgroundColor ="#aa77da"
       document.getElementById("past").style.backgroundColor ="white"
 }
     return(
