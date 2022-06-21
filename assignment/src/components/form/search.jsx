@@ -5,20 +5,22 @@ import {  useNavigate } from "react-router-dom";
 export const Search=()=>{
     let [data,setData] =useState({longitude:"",latitude:""})
     const navigate =useNavigate()
-    // const [longitude,setLongitude] =useState("")
-    // const [latitude,setLatitude] =useState("") 
+    let arr=[]
      const handleSubmit=(e)=>{
         e.preventDefault()
         let long =data.longitude
         let lati =data.latitude
         navigate(`/search_results/${long}/${lati}`)
-
+      
         const obj ={
             long :long,
             lati:lati,
             time : Time()
         }
-        localStorage.setItem("Date",JSON.stringify(obj))
+        var arr=  JSON.parse(localStorage.getItem('Date')) ||[];
+        // arr=[get]
+        arr.push(obj)
+        localStorage.setItem("Date",JSON.stringify(arr))
         //console.log(data)
      }
             const Time =()=>{
@@ -36,7 +38,7 @@ export const Search=()=>{
         var second = (sc < 10) ? '0' + sc : sc;
         var loctime =  hour+":" + minute +","+day +"/"+ month+"/"+year ;
         return loctime
-        console.log(loctime)
+      //  console.log(loctime)
             }
     const handleChange=(e)=>{
         let {id,value} =e.target
